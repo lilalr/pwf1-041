@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas PWF Pertemuan 1</title>
-    <style>
-        body { font-family: sans-serif; background-color: #111; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: #1a1a1a; padding: 40px; border-radius: 10px; border: 1px solid #333; text-align: center; width: 400px; }
-        h2 { margin: 0 0 10px 0; }
-        p { color: #888; margin-bottom: 20px; }
-        .btn { background: white; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h2>Lailatul Ramadhani</h2> <p>20230140041</p>    <a href="#" class="btn">Modul Pertemuan 1</a>
-    </div>
-</body>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ config('app.name', 'Tugas') }}</title>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+
+        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @else
+            <style>
+                /*! tailwindcss v4.0.7 | MIT License | https://tailwindcss.com */
+                /* CSS Boilerplate Tailwind (Hanya untuk fallback jika Vite tidak jalan) */
+                @layer theme {
+                    :root {
+                        --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+                        --spacing: .25rem;
+                        --radius-lg: .5rem;
+                        --radius-sm: .25rem;
+                    }
+                }
+            </style>
+        @endif
+    </head>
+    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
+        
+        <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+            @if (Route::has('login'))
+                <nav class="flex items-center justify-end gap-4">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                            Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                            Log in
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                                Register
+                            </a>
+                        @endif
+                    @endauth
+                </nav>
+            @endif
+        </header>
+
+        <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
+            <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
+                
+                <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
+                    
+                    <h1 class="mb-1 font-medium text-[#1b1b18] dark:text-[#EDEDEC] text-lg">Lailatul Ramadhani</h1>
+                    <p class="mb-6 text-[#706f6c] dark:text-[#A1A09A]">20230140041</p>
+                    
+                    <div class="pt-6 border-t border-[#e3e3e0] dark:border-[#3E3E3A]">
+                        <h2 class="mb-1 font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Modul Pertemuan 1</h2>
+                    </div>
+
+                </div>
+    
+
+            </main>
+        </div>
+
+        @if (Route::has('login'))
+            <div class="h-14.5 hidden lg:block"></div>
+        @endif
+
+    </body>
 </html>
