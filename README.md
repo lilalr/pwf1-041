@@ -25,4 +25,19 @@ Models
 Database
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/ecc1ecf4-2e7e-4233-ba33-ab5e5db0990d" />
 
+# PRAKTIKUM 4
+buat Product Controller
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/1229ad52-50c1-4633-86ab-e4541d6ccc7f" />
+
+# PRAKTIKUM 5
+List Product (User)
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/c00005f9-c6b4-4afc-bf64-febf4b29be98" />
+
+List Product (Admin)
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/0fcc153f-e968-4898-87c9-b7c40753dcac" />
+
+CRUD Product
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/1b8da905-64e7-4e64-90a9-3032d290c80a" />
+
+
 
