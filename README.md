@@ -42,6 +42,14 @@ CRUD Product
 Database
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/eccb65bf-7016-439c-b398-80da0a969fc0" />
 
+# PRAKTIKUM 6
+validasi store
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/31e34177-aca0-4812-b2a3-eacf3a33273b" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/af62f6d4-5f86-40ed-a7b1-87acb97b4dce" />
+
+validasi update
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/3898ccf6-0926-48b3-97ff-915f919dbdad" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e6f3143b-b780-4996-9bf7-ce4a8b3b9e73" />
 
 
 
