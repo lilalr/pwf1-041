@@ -6,6 +6,10 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Log;
+use Illuminate\Database\QueryException;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -27,18 +31,50 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $this->authorize('manage-product');
-
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'qty' => 'required|integer|min:0',
-            'price' => 'required|numeric|min:0',
-            'user_id' => 'required|exists:users,id',
+            'qty' => 'required|integer',
+            'price' => 'required|numeric',
+        ], [
+            'name.required' => 'Nama produk wajib diisi.',
+            'name.max' => 'Nama produk tidak boleh lebih dari 255 karakter.',
+
+            'qty.required' => 'Jumlah (kuantitas) produk wajib diisi.',
+            'qty.integer' => 'Jumlah produk harus berupa angka bulat (tidak boleh desimal).',
+
+            'price.required' => 'Harga produk wajib diisi.',
+            'price.numeric' => 'Harga produk harus berupa angka yang valid.',
         ]);
 
-        Product::create($request->all());
+        $validated['user_id'] = Auth::id();
 
-        return redirect()->route('product.index')->with('success', 'Product created successfully.');
+        try {
+            Product::create($validated);
+
+            return redirect()
+                ->route('product.index')
+                ->with('success', 'Product created successfully.');
+
+        } catch (QueryException $e) {
+            Log::error('Product store database error', [
+                'message' => $e->getMessage(),
+            ]);
+
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('error', 'Database error while creating product.');
+
+        } catch (\Throwable $e) {
+            Log::error('Product store unexpected error', [
+                'message' => $e->getMessage(),
+            ]);
+
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('error', 'An unexpected error occurred.');
+        }
     }
 
     public function show(Product $product)
@@ -54,26 +90,31 @@ class ProductController extends Controller
         return view('product.edit', compact('product', 'users'));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product) 
     {
+        // Otorisasi: Mengecek apakah user boleh mengedit produk ini
         $this->authorize('update', $product);
 
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'qty' => 'required|integer|min:0', // Pastikan divalidasi sebagai 'qty'
-            'price' => 'required|numeric|min:0',
-            'user_id' => 'required|exists:users,id',
-        ]);
+        // Mengambil data yang sudah lolos validasi dari UpdateProductRequest
+        $validated = $request->validated();
 
-        // Jika form kamu mengirim 'quantity', kita harus mengubahnya menjadi 'qty' sebelum update
-        $data = $request->all();
-        if ($request->has('quantity')) {
-            $data['qty'] = $request->quantity;
+        try {
+            // Proses simpan perubahan ke database
+            $product->update($validated);
+
+            return redirect()
+                ->route('product.index')
+                ->with('success', 'Product updated successfully.');
+
+        } catch (\Throwable $e) {
+            // Mencatat error jika terjadi kegagalan sistem
+            Log::error('Product update error', ['message' => $e->getMessage()]);
+
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('error', 'Something went wrong during update.');
         }
-
-        $product->update($data);
-
-        return redirect()->route('product.index')->with('success', 'Product updated successfully.');
     }
 
     public function delete(Product $product)

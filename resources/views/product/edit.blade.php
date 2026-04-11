@@ -20,8 +20,8 @@
                         </div>
                     </div>
 
-                    {{-- Form Utama --}}
-                    <form action="{{ route('product.update', $product->id) }}" method="POST" class="space-y-5">
+                    {{-- Form Utama - Ditambahkan 'novalidate' agar popup browser tidak muncul --}}
+                    <form action="{{ route('product.update', $product->id) }}" method="POST" class="space-y-5" novalidate>
                         @csrf
                         @method('PUT')
 
@@ -30,7 +30,7 @@
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 Product Name <span class="text-red-500">*</span>
                             </label>
-                            <input type="text" id="name" name="name" value="{{ old('name', $product->name) }}" required
+                            <input type="text" id="name" name="name" value="{{ old('name', $product->name) }}" 
                                 class="w-full px-4 py-2.5 rounded-lg border text-sm {{ $errors->has('name') ? 'border-red-400 bg-red-50' : 'border-gray-300 dark:border-gray-600' }} dark:bg-gray-700">
                             @error('name') <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p> @enderror
                         </div>
@@ -41,8 +41,7 @@
                                 <label for="qty" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                     Quantity <span class="text-red-500">*</span>
                                 </label>
-                                {{-- PERBAIKAN: Gunakan name="qty" sesuai database kamu --}}
-                                <input type="number" id="qty" name="qty" value="{{ old('qty', $product->qty) }}" min="0" required
+                                <input type="text" id="qty" name="qty" value="{{ old('qty', $product->qty) }}"
                                     class="w-full px-4 py-2.5 rounded-lg border text-sm {{ $errors->has('qty') ? 'border-red-400 bg-red-50' : 'border-gray-300 dark:border-gray-600' }} dark:bg-gray-700">
                                 @error('qty') <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p> @enderror
                             </div>
@@ -51,7 +50,7 @@
                                 <label for="price" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                     Price <span class="text-red-500">*</span>
                                 </label>
-                                <input type="number" id="price" name="price" value="{{ old('price', $product->price) }}" min="0" required
+                                <input type="text" id="price" name="price" value="{{ old('price', $product->price) }}"
                                     class="w-full px-4 py-2.5 rounded-lg border text-sm {{ $errors->has('price') ? 'border-red-400 bg-red-50' : 'border-gray-300 dark:border-gray-600' }} dark:bg-gray-700">
                                 @error('price') <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p> @enderror
                             </div>
@@ -62,8 +61,8 @@
                             <label for="user_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 Owner <span class="text-red-500">*</span>
                             </label>
-                            <select id="user_id" name="user_id" required
-                                class="w-full px-4 py-2.5 rounded-lg border text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                            <select id="user_id" name="user_id" 
+                                class="w-full px-4 py-2.5 rounded-lg border text-sm {{ $errors->has('user_id') ? 'border-red-400 bg-red-50' : 'border-gray-300 dark:border-gray-600' }} dark:bg-gray-700">
                                 <option value="">Select Owner --</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" {{ old('user_id', $product->user_id) == $user->id ? 'selected' : '' }}>
@@ -71,6 +70,7 @@
                                     </option>
                                 @endforeach
                             </select>
+                            @error('user_id') <p class="mt-1.5 text-xs text-red-500">{{ $message }}</p> @enderror
                         </div>
 
                         {{-- Buttons --}}
@@ -88,7 +88,6 @@
 
                     <hr class="my-6 border-gray-200 dark:border-gray-700">
 
-                    {{-- Form Delete (Dibuat terpisah agar tidak bentrok) --}}
                     <form action="{{ route('product.delete', $product) }}" method="POST" onsubmit="return confirm('Are you sure?')">
                         @csrf
                         @method('DELETE')
