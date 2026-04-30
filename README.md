@@ -59,10 +59,20 @@ validasi update
 relasi product dg category
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/462b4cee-f2f3-4f4a-9d32-d1ae2a9155cd" />
 
-form category
+add category
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/da9c2fc4-b53b-41fe-92d4-8dc33e2d8570" />
+
+edit category
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/ff7865a3-ce37-457d-8690-73ddbfcb397b" />
 
 category list
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e336b07e-a421-4837-b809-4e568d03e529" />
+
+dashboard role admin
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/6648c080-05f2-4af5-9225-75096a0a41e2" />
+
+dashboard role user
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/9eef362a-9709-4caa-ae3d-0b91024f6fd7" />
+
 
 
