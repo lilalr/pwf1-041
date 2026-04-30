@@ -51,6 +51,9 @@ validasi update
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/3898ccf6-0926-48b3-97ff-915f919dbdad" />
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e6f3143b-b780-4996-9bf7-ce4a8b3b9e73" />
 
+# PRAKTIKUM 7
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/0534f761-73f3-4edf-8e25-0ca3894d0a39" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/753ba513-9478-47c8-a46a-cf1b35d07bb3" />
 
 
 
