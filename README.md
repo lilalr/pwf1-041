@@ -55,6 +55,14 @@ validasi update
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/0534f761-73f3-4edf-8e25-0ca3894d0a39" />
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/753ba513-9478-47c8-a46a-cf1b35d07bb3" />
 
+# UCP 1
+relasi product dg category
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/462b4cee-f2f3-4f4a-9d32-d1ae2a9155cd" />
 
+form category
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/da9c2fc4-b53b-41fe-92d4-8dc33e2d8570" />
+
+category list
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e336b07e-a421-4837-b809-4e568d03e529" />
 
 
