@@ -74,5 +74,21 @@ dashboard role admin
 dashboard role user
 <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/9eef362a-9709-4caa-ae3d-0b91024f6fd7" />
 
+# PRAKTIKUM 9
+Auth
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/65addc2e-0db7-4e71-a826-2cd7ba1c57a0" />
+Category
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/2b64e403-0a07-40d2-90c3-2e813ed0ca85" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e73ad7c2-8564-483c-b87c-5ee6ca467a20" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/21389601-5a69-4596-bf80-3bb6a1a6110b" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/391fa2cf-d678-48d4-81ce-faa63df0609c" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/161512fc-2fc8-4e08-90b6-0330dd3d50ae" />
+Product
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/3dc94a18-4096-4271-ac70-fa9f9bd76a5a" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/08469955-7d9e-47ae-b4e9-f61093a4c29c" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/2b79e880-bf64-4a8a-909c-622ba2b20c8c" />
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/6370bd54-3ae4-48a7-9f94-8a8ece476074" />
+
+
 
 
